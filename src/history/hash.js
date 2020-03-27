@@ -133,9 +133,11 @@ export function getHash (): string {
 
 function getUrl (path) {
   const href = window.location.href
+  return `${href.replace(/#.*$|\/$/, '')}${(path && path !== '/') ? `#${path}` : ''}`
+  /*
   const i = href.indexOf('#')
   const base = i >= 0 ? href.slice(0, i) : href
-  return `${base}#${path}`
+  return `${base}#${path}`*/
 }
 
 function pushHash (path) {
