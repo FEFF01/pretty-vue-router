@@ -2569,7 +2569,7 @@ function getHash () {
   var href = window.location.href;
   var index = href.indexOf('#');
   // empty path
-  if (index < 0) { return '' }
+  if (index < 0) { return '/' }
 
   href = href.slice(index + 1);
   // decode the hash but not the search or hash
@@ -2590,7 +2590,7 @@ function getHash () {
 
 function getUrl (path) {
   var href = window.location.href;
-  return ("" + (href.replace(/#.*$|\/$/, "")) + ((path && path !== "/") ? ("#" + path) : ''));
+  return ("" + (href.replace(/#.*$|\/$/, '')) + ((path && path !== '/') ? ("#" + path) : ''))
   /*
   const i = href.indexOf('#')
   const base = i >= 0 ? href.slice(0, i) : href
